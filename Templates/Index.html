@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Caption Generator</title>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form method="POST" action="/predict" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit">
+    </form>
+    {% if caption %}
+        <h2>Generated Caption:</h2>
+        <p>{{ caption }}</p>
+        <img src="{{ img_path }}" width="300">
+    {% endif %}
+</body>
+</html>
